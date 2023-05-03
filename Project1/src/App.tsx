@@ -1,7 +1,11 @@
+import Main from "./components/Main"
+import Navbar from "./components/Navbar"
+
 function App() {
   return (
     <>
-      <h2>Mi app</h2>
+      <Navbar />
+      <Main />
     </>
   )
 }
