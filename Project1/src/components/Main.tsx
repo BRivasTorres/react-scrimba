@@ -1,8 +1,8 @@
 const Main = () => {
   return (
-    <div className="bg-main-black p-[3rem]">
+    <div className="bg-main-black p-[3rem] h-[85vh] ">
       <h2 className="text-white text-[2rem] font-bold">Fun facts about React</h2>
-      <ul className="text-gray p-[2rem] ">
+      <ul className="text-gray p-[2rem] text-[1.3rem] marker:text-sky-300 list-disc">
         <li>Was first realeased in 2013</li>
         <li>Was originally created by Jordan Walke</li>
         <li>Has well over 100k stars on GitHub</li>
