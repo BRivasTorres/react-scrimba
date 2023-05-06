@@ -1,7 +1,9 @@
+import Navbar from "./components/Navbar"
+
 function App() {
   return (
     <>
-      <h2 className="text-[3rem] ">Hola</h2>
+      <Navbar />
     </>
   )
 }
