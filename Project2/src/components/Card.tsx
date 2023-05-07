@@ -1,7 +1,6 @@
-import image1 from "../assets/image 12.png"
 import star from "../assets/Star 1.png"
 
-interface Card {
+interface CardProps {
     img: string;
     rating: string;
     reviewCount: number;
@@ -10,7 +9,7 @@ interface Card {
     price: number;
 }
 
-const Card = (props: Card) => {
+const Card = (props: CardProps) => {
     return (
         <div>
             <img src={props.img} alt="image1" className="w-[220px] " />
@@ -19,7 +18,7 @@ const Card = (props: Card) => {
                 <p className="text-[1.2rem]" >{props.rating}<span className="text-gray-400"> {props.reviewCount} {props.country} </span></p>
             </div>
             <p>{props.title} </p>
-            <p><strong>From ${props.price} </strong>/ person</p>
+            <p><strong>From ${props.price}</strong>/ person</p>
         </div>
     )
 }
