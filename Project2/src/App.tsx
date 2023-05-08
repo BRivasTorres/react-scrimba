@@ -18,10 +18,12 @@ function App() {
   })
 
   return (
-    <div className="w-[600px] mx-auto my-0">
+    <div className="w-[750px] mx-auto my-0">
       <Navbar />
       {/* <Hero /> */}
-      {cardComponent}
+      <div className="flex justify-between">
+        {cardComponent}
+      </div>
     </div>
   )
 }
