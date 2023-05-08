@@ -2,7 +2,7 @@ import star from "../assets/Star 1.png"
 
 interface CardProps {
     img: string;
-    rating: string;
+    rating: number;
     reviewCount: number;
     country: string;
     title: string;
