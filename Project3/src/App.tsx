@@ -1,8 +1,10 @@
+import Navbar from "./components/Navbar"
+
 function App() {
   return (
-    <>
-      <h1 className="font-bold text-gray-500 ">Project 3</h1>
-    </>
+    <div className="w-[80%] mx-auto my-0 ">
+      <Navbar />
+    </div>
   )
 }
 
