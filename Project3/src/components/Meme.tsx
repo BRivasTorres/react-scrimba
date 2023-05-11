@@ -1,10 +1,16 @@
-import MemeData from "../helpers/memeData"
+import { useState } from 'react';
+
+import MemeData from "../helpers/memeData.js"
+
 const Meme = () => {
+    const [image, setImage] = useState("")
+
     const getRandomImage = () => {
-        const img = 100; // Replace with your desired maximum value
+        const img = 100;
         const randomImg = Math.floor(Math.random() * img);
-        console.log(MemeData.data.memes[randomImg].url);
+        setImage(MemeData.data.memes[randomImg].url)
     }
+    console.log(image)
     return (
         <div>
             <div className="w-[90%] mx-auto my-[2rem]">
@@ -14,6 +20,7 @@ const Meme = () => {
                 </div>
                 <button className="gradient text-white font-bold w-[100%] h-[2.5rem] mt-[1.5rem] rounded-[5px] " onClick={getRandomImage}>Get new meme image🎴</button>
             </div>
+            <img src={image} alt="" className='w-[90%]  mx-auto my-[2rem] ' />
         </div>
     )
 }
