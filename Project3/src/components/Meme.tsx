@@ -11,7 +11,7 @@ const Meme = () => {
         randomImage: "http://i.imgflip.com/1bij.jpg"
     })
 
-    cosnt[allMemeImages, setAllMemeImages] = useState(MemeData)
+    const [allMemeImages, setAllMemeImages] = useState(MemeData)
 
 
     const getRandomImage = () => {
