@@ -3,8 +3,6 @@ import { useState } from 'react';
 import MemeData from "../helpers/memeData.js"
 
 const Meme = () => {
-    // const [image, setImage] = useState("")
-
     const [meme, setMeme] = useState({
         topText: "",
         bottomText: "",
@@ -20,7 +18,15 @@ const Meme = () => {
         const url = MemeData.data.memes[randomImg].url
         setMeme(prevMeme => ({
             ...prevMeme,
-            randomImage: url
+            randomImage: url,
+        }))
+    }
+
+    function handleChange(e) {
+        const { name, value } = e.target
+        setMeme(prevMeme => ({
+            ...prevMeme,
+            [name]: value
         }))
     }
 
@@ -28,12 +34,30 @@ const Meme = () => {
         <div>
             <div className="w-[90%] mx-auto my-[2rem]">
                 <div className="flex justify-between ">
-                    <input type="text" placeholder="Shut up" className="w-[47%] h-[2.5rem] p-[1rem] placeholder:text-black border border-gray-400 rounded-[10px]" />
-                    <input type="text" placeholder="And take my money" className="w-[47%] h-[2.5rem] p-[1rem] placeholder:text-black border border-gray-400 rounded-[10px]" />
+                    <input
+                        type="text"
+                        placeholder="Top Text"
+                        className="w-[47%] h-[2.5rem] p-[1rem] placeholder:gray-300 border border-gray-400 rounded-[10px]"
+                        name='topText'
+                        value={meme.topText}
+                        onChange={handleChange}
+                    />
+                    <input
+                        type="text"
+                        placeholder="Bottom Text"
+                        className="w-[47%] h-[2.5rem] p-[1rem] placeholder:gray-300 border border-gray-400 rounded-[10px]"
+                        name='bottomText'
+                        value={meme.bottomText}
+                        onChange={handleChange}
+                    />
                 </div>
                 <button className="gradient text-white font-bold w-[100%] h-[2.5rem] mt-[1.5rem] rounded-[5px] " onClick={getRandomImage}>Get new meme image🎴</button>
             </div>
-            <img src={meme.randomImage} alt="" className='w-[90%]  mx-auto my-[2rem] ' />
+            <div className='relative'>
+                <img src={meme.randomImage} alt="" className='w-[90%]  mx-auto my-[2rem] ' />
+                <h2 className='absolute text-white font-extrabold text-[3rem] left-[30%] top-[20%]'>{meme.topText} </h2>
+                <h2 className='absolute text-white font-extrabold text-[3rem] left-[30%] top-[75%]'>{meme.bottomText} </h2>
+            </div>
         </div>
     )
 }
