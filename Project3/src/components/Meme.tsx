@@ -13,8 +13,9 @@ const Meme = () => {
     useEffect(() => {
         fetch("https://api.imgflip.com/get_memes")
             .then(res => res.json())
-            .then(data => setAllMemeImages(data.data.mmes))
+            .then(data => setAllMemeImages(data.data.memes))
     }, [])
+
 
     const getRandomImage = () => {
         const img = 100;
